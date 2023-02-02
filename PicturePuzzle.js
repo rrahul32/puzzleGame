@@ -320,12 +320,3 @@
     window.PicturePuzzle = window.PicturePuzzle || o;
   },
 ]);
-const htmlDomElement = document.getElementById("puzzle");
-const imageSourceUrl = "/assets/dino.jpg";
-const canvasWidth = "450";
-puzzle = new PicturePuzzle(
-  htmlDomElement,
-  imageSourceUrl,
-  canvasWidth,
-  (dimmension = 4)
-);
