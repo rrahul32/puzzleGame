@@ -282,13 +282,13 @@
               var n = [this.cells[e], this.cells[t]];
               (this.cells[t] = n[0]),
                 (this.cells[e] = n[1]),
-                this.cells[t].el.onanimationend=()=>{
+
                   !this.shuffling &&
                   this.isAssembled() &&
                   this.onFinished &&
                   "function" == typeof this.onFinished &&
                   this.onFinished.call(this);
-                }
+
             },
           },
           {
