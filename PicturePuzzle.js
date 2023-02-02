@@ -291,6 +291,7 @@
             value: function () {
               for (var t = 0; t < this.cells.length; t++)
                 if (t !== this.cells[t].index)
+                  if(t<=14)
                   return 0;
               return !0;
             },
