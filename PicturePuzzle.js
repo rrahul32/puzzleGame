@@ -82,6 +82,7 @@
             : (this.isEmpty = !0);
       }
       var e, i, s;
+      var z=1;
       return (
         (e = t),
         (i = [
@@ -97,6 +98,7 @@
                 (e.style.border = "1px solid #FFF"),
                 (e.className = "puzzleDiv"),
                 (e.style.position = "absolute"),
+                (e.innerText = z++),
                 (e.onclick = function () {
                   var e = t.puzzle.findPosition(t.index),
                     i = t.puzzle.findEmpty(),
