@@ -72,10 +72,10 @@ function findXPosition(puzzle)
 {
     N=4;
     // start from bottom-right corner of matrix
-    for (i = N - 1; i >= 0; i--)
-        for (j = N - 1; j >= 0; j--)
+    for (i = 0; i < N-1; i++)
+        for (j = 0; j <N-1; j++)
             if (puzzle[i][j] == 16)
-                return N - i;
+                return i;
 }
 
 // This function returns true if given
@@ -89,10 +89,7 @@ function  checkSolvable( puzzle)
     // If grid is odd, return true if inversion
     // count is even.
         pos = findXPosition(puzzle);
-        if (pos & 1)
-            return !(invCount & 1);
-        else
-            return invCount & 1;
+        return((pos+invCount)%2==1)
 }
 if (!checkSolvable(jr))
 {
