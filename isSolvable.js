@@ -89,16 +89,18 @@ function  checkSolvable( puzzle)
     // If grid is odd, return true if inversion
     // count is even.
         pos = findXPosition(puzzle);
+        document.getElementById('log').innerText+=` ${invCount}`;
+        document.getElementById('log').innerText+=` ${pos}`;
         return((pos+invCount)%2==1)
 }
 if (!checkSolvable(jr))
 {
-  console.log("false");
+  document.getElementById('log').innerText+=" false";
   puzzle.shuffle();
   isSolvable();
 }
 else{
-  console.log("true")
+  document.getElementById('log').innerText+=" false";
 }
 }
 isSolvable();
