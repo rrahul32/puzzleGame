@@ -98,6 +98,7 @@
                 (e.style.border = "1px solid #FFF"),
                 (e.className = "puzzleDiv"),
                 (e.style.position = "absolute"),
+                (e.style.color = "red"),
                 (e.innerText = z++),
                 (e.onclick = function () {
                   var e = t.puzzle.findPosition(t.index),
