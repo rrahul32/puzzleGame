@@ -52,16 +52,13 @@ for(i=0;i<16;i++)
 
 function  getInvCount(arr)
 {
-    N=4
      inv_count = 0;
-    for (i = 0; i < (N*N - 1); i++)
+    for (i = 0; i < 16; i++)
     {
       if(arr[i]!=16)
-        for (j = i + 1; j < (N * N); j++)
+        for (j = i+1; j < 16; j++)
         {
-            // count pairs(arr[i], arr[j]) such that
-              // i < j but arr[i] > arr[j]
-              if(arr[j]!=16 && arr[j]< arr[i])
+              if(arr[j]!=16 && arr[i]>arr[j])
                 inv_count++;
         }
     }
@@ -70,37 +67,35 @@ function  getInvCount(arr)
 // find Position of blank from bottom
 function findXPosition(puzzle)
 {
-    N=4;
     // start from bottom-right corner of matrix
-    for (i = 0; i < N-1; i++)
-        for (j = 0; j <N-1; j++)
+    for (i = 0; i < 4; i++)
+        for (j = 0; j < 4; j++)
             if (puzzle[i][j] == 16)
                 return i;
 }
 
 // This function returns true if given
 // instance of N*N - 1 puzzle is solvable
-function  checkSolvable( puzzle)
+function  checkSolvable(jr,br)
 {
-    N=4;
     // Count inversions in given puzzle
-    invCount = getInvCount(puzzle);
+    invCount = getInvCount(br);
  
     // If grid is odd, return true if inversion
     // count is even.
-        pos = findXPosition(puzzle);
+        pos = findXPosition(jr);
         document.getElementById('log').innerText+=` ${invCount}`;
         document.getElementById('log').innerText+=` ${pos}`;
         return((pos+invCount)%2==1)
 }
-if (!checkSolvable(jr))
+if (!checkSolvable(jr,br))
 {
   document.getElementById('log').innerText+=" false";
   puzzle.shuffle();
   isSolvable();
 }
 else{
-  document.getElementById('log').innerText+=" false";
+  document.getElementById('log').innerText+=" true";
 }
 }
 isSolvable();
