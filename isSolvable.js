@@ -91,8 +91,8 @@ function  checkSolvable(jr,br)
 if (!checkSolvable(jr,br))
 {
   document.getElementById('log').innerText+=" false";
-  // puzzle.shuffle();
-  // isSolvable();
+  puzzle.shuffle();
+  isSolvable();
 }
 else{
   document.getElementById('log').innerText+=" true";
